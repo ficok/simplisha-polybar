@@ -1,4 +1,12 @@
-#!/bin/zsh
+#!/bin/bash
+
+simplishaFile=~/.SIMPLISHA
+compyFile=~/.COMPY
+
+test -e $compyFile
+if [ $? -eq 0 ]; then
+    mv $simplishaFile $compyFile
+fi
 
 DIR="$HOME/.config/polybar/simplisha"
 
