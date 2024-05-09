@@ -5,16 +5,15 @@ isDiscoverable="$(bluetoothctl show | grep 'Discoverable:' | awk '{print $2}')"
 isConnected="$(bluetoothctl devices Connected)"
 
 if [[ $isConnected != "" ]]; then
-    echo "%{F#748cab}%{F-}"
+    echo "%{F#eeeeee}%{F-}"
 
 elif [[ $isPowered == "yes" && $isDiscoverable == "yes" ]]; then
-    echo "%{F#95a9c3}%{F-}"
+    echo "%{F#eeeeee}%{F-}"
     
 elif [[ $isPowered == "yes" ]]; then
-    echo -e "%{F#eeeeee}%{F-}"
+    echo -e "%{F#eeeeee}%{F-}"
     
 else
-    # echo -e "\e[00;33m"
     echo "%{F#494949}%{F-}"
 
 fi
